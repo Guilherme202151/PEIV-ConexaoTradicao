@@ -50,7 +50,45 @@ As dependências seguem um único sentido, de cima para baixo: <strong>ui → da
 
 ## 2. Diagrama de arquitetura de implantação
 
-*Em elaboração: será publicado em `diagramas/`.*
+![Diagrama UML de implantação](diagramas/diagrama-implantacao.png)
+
+<p align="justify">
+O diagrama de implantação mostra <strong>onde cada parte da solução executa em produção</strong> e como os nós se comunicam. A solução tem dois lados: o <strong>aplicativo</strong>, instalado nos smartphones Android dos usuários, e o <strong>backend</strong>, que roda inteiro em serviços gerenciados do <strong>Firebase</strong> (Google Cloud). Não existe servidor próprio para instalar, configurar ou manter: o modelo é <em>serverless</em> (sem servidor), no plano gratuito Spark.
+</p>
+
+### Nós e artefatos
+
+| Nó | Tipo | O que executa / armazena |
+|---|---|---|
+| Smartphone Android | «device» | Aparelho de cada usuário (produtor rural ou comprador). Vários aparelhos (1..*) se conectam ao mesmo backend |
+| Android OS 8.0+ (API 26+) | «executionEnvironment» | Sistema operacional que executa o app. A versão mínima foi escolhida para cobrir aparelhos mais simples, comuns no interior |
+| `ConexaoTradicao.apk` | «artifact» | O aplicativo compilado e assinado, que contém os pacotes `ui`, `data` e `util` do diagrama de pacotes |
+| `conexao_tradicao.db` | «artifact» | Banco SQLite local (Room), usado como cache offline-first |
+| Google Play Services | «executionEnvironment» | Serviços do Google no aparelho: cliente de notificações (FCM), login com Google e localização (Fused Location) |
+| Receptor GPS / Google Maps | «device» / «artifact» | GPS usado no cadastro do local do evento; o Google Maps é aberto para mostrar o local da carneada |
+| Google Cloud Platform | «cloud» | Infraestrutura em nuvem onde fica o projeto Firebase |
+| Projeto Firebase `conexao-e-tradicao` | «node» | Projeto que agrupa os serviços de backend do app |
+| Firebase Authentication | «service» | Cadastro e login (e-mail/senha e Google); emite o token que identifica o usuário nas requisições |
+| Cloud Firestore | «database» | Banco NoSQL em tempo real, com as coleções `users`, `events` (+ `cuts`), `participations`, `ratings` e `chats` (+ `messages`), além do arquivo de regras de acesso `firestore.rules` |
+| Firebase Cloud Messaging | «service» | Entrega das notificações push |
+| Firebase App Distribution | «service» | Distribui o `app-release.apk` para os testadores da fase piloto |
+| Google Identity (OAuth 2.0) | «service» | Autentica a conta Google no login com Google e repassa a identidade ao Firebase Authentication |
+
+### Caminhos de comunicação
+
+| De → Para | Protocolo | Finalidade |
+|---|---|---|
+| Smartphone → Firebase Authentication | HTTPS/TLS (REST) | Login, cadastro e renovação do token (RF01) |
+| Smartphone → Cloud Firestore | gRPC sobre HTTP/2 + TLS | Leitura, escrita e *listeners* em tempo real (RF02 a RF10) |
+| Smartphone → Firebase Cloud Messaging | HTTP/2 + TLS (conexão persistente) | Recebimento de notificações push (RF11) |
+| Smartphone → Google Identity | HTTPS com OAuth 2.0 | Login com conta Google (RF01) |
+| Smartphone → Firebase App Distribution | HTTPS | Download e instalação do aplicativo |
+
+### Características da implantação
+
+<p align="justify">
+<strong>Segurança:</strong> toda a comunicação entre o aparelho e a nuvem é criptografada com TLS. O acesso ao Firestore só é liberado para usuários autenticados, conforme as regras do <code>firestore.rules</code>. <strong>Disponibilidade e conectividade:</strong> como muitos eventos acontecem em áreas rurais com sinal fraco, o app grava os dados primeiro no banco local e sincroniza com o Firestore quando a conexão volta. Assim, o usuário consegue consultar eventos e mensagens mesmo sem internet. <strong>Escalabilidade:</strong> os serviços do Firebase escalam automaticamente conforme o número de usuários, sem nenhuma mudança na arquitetura. <strong>Custo:</strong> o plano Spark é gratuito dentro de cotas suficientes para a fase piloto do projeto.
+</p>
 
 ## 3. Diagrama de arquitetura DevOps
 
