@@ -133,4 +133,83 @@ A arquitetura DevOps define <strong>como o aplicativo evolui de forma contínua<
 
 ## 4. Infraestrutura de deploy/publicação
 
-*Em elaboração: escolha, descrição e justificativa da infraestrutura de publicação da solução.*
+### 4.1 Infraestrutura escolhida
+
+<p align="justify">
+A solução é publicada em <strong>nuvem pública</strong>, usando o <strong>Firebase</strong>, plataforma <em>Backend as a Service</em> (BaaS) do Google que roda sobre o <strong>Google Cloud Platform</strong>, no plano gratuito <strong>Spark</strong>. O aplicativo é distribuído aos usuários da fase piloto pelo <strong>Firebase App Distribution</strong>. O código-fonte e a automação (CI/CD) ficam no <strong>GitHub</strong> (repositórios públicos e GitHub Actions).
+</p>
+
+| Camada | Serviço | Função |
+|---|---|---|
+| Autenticação | Firebase Authentication | Cadastro e login com e-mail/senha e conta Google |
+| Banco de dados | Cloud Firestore (NoSQL, tempo real) | Usuários, eventos, cortes, agendamentos, avaliações e chat |
+| Notificações | Firebase Cloud Messaging (FCM) | Avisos de novas mensagens e lembretes |
+| Distribuição | Firebase App Distribution | Envio do APK aos produtores e compradores do piloto |
+| Monitoramento | Crashlytics, Analytics e Console do Firebase | Falhas, uso do app e consumo das cotas |
+| Código e CI/CD | GitHub + GitHub Actions | Versionamento, build, testes e entrega automática |
+
+### 4.2 Conta e estrutura ativadas
+
+A conta de nuvem já está ativa e em uso pelo aplicativo:
+
+| Item | Situação |
+|---|---|
+| Projeto Firebase | **Conexao e Tradicao** — ID `conexao-e-tradicao`, nº 455608861255 |
+| Plano | Spark (gratuito, sem cartão de crédito) |
+| Firebase Authentication | Ativo, com os provedores e-mail/senha e Google |
+| Cloud Firestore | Ativo (edição Standard), com as coleções `users`, `events`, `participations`, `ratings` e `chats` e regras de acesso publicadas |
+| Firebase Cloud Messaging | Ativo |
+| Firebase App Distribution | Ativo, com o grupo de testadores `piloto-produtores` criado |
+| App Android registrado | Sim, com `google-services.json` e impressão digital SHA-1 configurados |
+| Repositórios GitHub | [ConexaoTradicao-App](https://github.com/fabioccf2/ConexaoTradicao-App) (código) e [PEIV-ConexaoTradicao](https://github.com/fabioccf2/PEIV-ConexaoTradicao) (documentação) |
+
+### 4.3 Justificativa da escolha
+
+<p align="justify">
+<strong>1. Adequação ao projeto extensionista e ao público.</strong> O Conexão & Tradição atende pequenos produtores rurais e não tem orçamento. O plano Spark não tem custo e não exige cartão de crédito. Além disso, o SDK do Firestore para Android já traz o suporte offline de que o público rural precisa, por causa do sinal fraco: os dados ficam em cache no aparelho e sincronizam sozinhos quando a conexão volta.
+</p>
+
+<p align="justify">
+<strong>2. Sem servidor para manter (serverless).</strong> Autenticação, banco, notificações e distribuição são serviços gerenciados pelo Google. A equipe não precisa instalar sistema operacional, aplicar atualizações de segurança, fazer backup manual nem manter uma máquina ligada. Todo o esforço vai para o aplicativo, não para a infraestrutura.
+</p>
+
+<p align="justify">
+<strong>3. Capacidade suficiente para a fase piloto.</strong> O plano Spark oferece 1 GiB de dados no Firestore, 50 mil leituras, 20 mil gravações e 20 mil exclusões por dia, 10 GiB/mês de tráfego e até 50 mil usuários ativos por mês no Authentication. FCM, App Distribution, Crashlytics e Analytics não têm custo. Estimando que cada usuário abra o app cerca de 5 vezes por dia e leia uns 30 documentos por abertura, as 50 mil leituras diárias atendem por volta de <strong>300 usuários ativos por dia</strong>, bem acima do previsto para o piloto na região.
+</p>
+
+<p align="justify">
+<strong>4. Integração com o que já foi construído.</strong> O aplicativo foi desenvolvido e testado de ponta a ponta com o Firebase. Trocar de plataforma exigiria reescrever toda a camada de dados sem nenhum ganho para o usuário final.
+</p>
+
+<p align="justify">
+<strong>5. Segurança e escalabilidade prontas.</strong> A comunicação é criptografada (TLS), o acesso aos dados é controlado por regras vinculadas ao usuário autenticado e os serviços escalam automaticamente. Se o uso crescer, basta migrar para o plano Blaze (pague pelo uso), que mantém as mesmas cotas gratuitas e cobra só o excedente, sem mudar nada na arquitetura.
+</p>
+
+### 4.4 Comparação com as alternativas
+
+| Critério | **Firebase (escolhido)** | Supabase | AWS (Amplify / EC2 + RDS) | Microsoft Azure | Self-host (servidor próprio / VPS) |
+|---|---|---|---|---|---|
+| Custo para o piloto | **Gratuito (Spark)** | Gratuito com limites; Pro a partir de US$ 25/mês | Camada gratuita temporária para vários serviços; depois, pago | Créditos iniciais; depois, pago | Mensalidade da VPS ou compra de hardware, energia e internet |
+| Exige cartão de crédito | **Não** | Não (gratuito) | Sim | Sim | — |
+| Servidor para manter | **Não** | Não | Sim, no caso de EC2 | Depende do serviço | **Sim**, tudo por conta da equipe |
+| Suporte offline no Android | **Nativo no SDK** | Precisa implementar | Parcial (Amplify DataStore) | Precisa implementar | Precisa implementar |
+| Tempo real (chat) | **Nativo** | Sim (Realtime) | Precisa configurar (AppSync) | Precisa configurar (SignalR) | Precisa desenvolver |
+| Retrabalho no app | **Nenhum** | Reescrever a camada de dados | Reescrever a camada de dados | Reescrever a camada de dados | Criar uma API do zero |
+| Limitação principal | Dependência de um fornecedor | Gratuito tem 500 MB e **pausa após 1 semana sem uso** | Complexidade de configuração | Complexidade de configuração | Disponibilidade, segurança e backups sob responsabilidade da equipe |
+
+<p align="justify">
+<strong>Por que não Supabase:</strong> é a alternativa mais parecida, mas o plano gratuito limita o banco a 500 MB e pausa o projeto após uma semana sem atividade, o que é arriscado para um app comunitário de uso irregular. Além disso, exigiria reescrever o app. <strong>Por que não AWS ou Azure:</strong> são plataformas mais completas, mas exigem montar e configurar vários serviços, pedem cartão de crédito e têm gratuidade temporária ou limitada; seria complexidade e risco de custo desnecessários para o tamanho do projeto. <strong>Por que não self-host:</strong> um servidor próprio teria custo mensal e deixaria para a equipe a responsabilidade de manter tudo no ar, atualizado e com backup. Uma falta de energia ou de internet derrubaria o serviço para todos os usuários.
+</p>
+
+<p align="justify">
+<strong>Distribuição — por que App Distribution e não Google Play agora:</strong> o App Distribution é gratuito, usa o mesmo projeto Firebase e permite enviar novas versões aos testadores por e-mail, sem revisão da loja. A Google Play exige uma conta de desenvolvedor (taxa única de US$ 25) e passa por um processo de revisão; ela é o passo natural <strong>depois</strong> que o piloto validar o aplicativo.
+</p>
+
+### 4.5 Riscos assumidos e como são tratados
+
+| Risco | Tratamento |
+|---|---|
+| Dependência de um único fornecedor (Google) | O acesso aos dados fica isolado na camada `data.repository` (ver diagrama de pacotes). Trocar de backend exige alterar só essa camada, não as telas |
+| Estouro das cotas gratuitas | Acompanhamento do uso no Console do Firebase; se necessário, migração para o plano Blaze, que cobra apenas o excedente |
+| Cloud Storage indisponível no plano Spark | As fotos dos eventos são comprimidas e salvas no próprio Firestore. Com o plano Blaze, passam para o Cloud Storage |
+| Distribuição restrita a testadores convidados | Adequada ao piloto; a publicação na Google Play está prevista para a etapa seguinte |
