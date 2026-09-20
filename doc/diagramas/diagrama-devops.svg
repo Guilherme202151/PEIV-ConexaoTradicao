@@ -1,0 +1,195 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1790" height="1150" viewBox="0 0 1790 1150" font-family="Arial, Helvetica, sans-serif">
+<defs><marker id="fill" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="11" markerHeight="11" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L12,6 L0,12 z" fill="#1f2937"/></marker><marker id="fillr" viewBox="0 0 12 12" refX="1" refY="6" markerWidth="11" markerHeight="11" orient="auto" markerUnits="userSpaceOnUse"><path d="M12,0 L0,6 L12,12 z" fill="#1f2937"/></marker></defs>
+<rect width="1790" height="1150" fill="#fff"/>
+<text x="30" y="36" font-size="22" font-weight="bold" fill="#1f2937">Arquitetura DevOps — “Conexão &amp; Tradição”</text>
+<text x="30" y="58" font-size="13" fill="#4b5563">Ciclo de vida contínuo do aplicativo: planejamento, integração contínua (CI), entrega contínua (CD) e monitoramento, com GitHub e Firebase</text>
+<polygon points="30,82 224,82 242,111.0 224,140 30,140 30,111.0" fill="#dbeafe" stroke="#1e40af" stroke-width="1.4"/>
+<text x="140.0" y="107" font-size="15" font-weight="bold" text-anchor="middle" fill="#1e40af">1 · Plan</text>
+<text x="140.0" y="125" font-size="12" text-anchor="middle" fill="#1e40af">Planejar</text>
+<text x="140.0" y="160" font-size="11.5" text-anchor="middle" fill="#4b5563">GitHub Issues</text>
+<text x="140.0" y="175" font-size="11.5" text-anchor="middle" fill="#4b5563">GitHub Projects (Kanban)</text>
+<polygon points="246,82 440,82 458,111.0 440,140 246,140 264,111.0" fill="#dbeafe" stroke="#1e40af" stroke-width="1.4"/>
+<text x="356.0" y="107" font-size="15" font-weight="bold" text-anchor="middle" fill="#1e40af">2 · Code</text>
+<text x="356.0" y="125" font-size="12" text-anchor="middle" fill="#1e40af">Codificar</text>
+<text x="356.0" y="160" font-size="11.5" text-anchor="middle" fill="#4b5563">Android Studio · Kotlin</text>
+<text x="356.0" y="175" font-size="11.5" text-anchor="middle" fill="#4b5563">Git · GitHub Flow</text>
+<polygon points="462,82 656,82 674,111.0 656,140 462,140 480,111.0" fill="#dbeafe" stroke="#1e40af" stroke-width="1.4"/>
+<text x="572.0" y="107" font-size="15" font-weight="bold" text-anchor="middle" fill="#1e40af">3 · Build</text>
+<text x="572.0" y="125" font-size="12" text-anchor="middle" fill="#1e40af">Compilar</text>
+<text x="572.0" y="160" font-size="11.5" text-anchor="middle" fill="#4b5563">GitHub Actions</text>
+<text x="572.0" y="175" font-size="11.5" text-anchor="middle" fill="#4b5563">Gradle · JDK 17</text>
+<polygon points="678,82 872,82 890,111.0 872,140 678,140 696,111.0" fill="#dbeafe" stroke="#1e40af" stroke-width="1.4"/>
+<text x="788.0" y="107" font-size="15" font-weight="bold" text-anchor="middle" fill="#1e40af">4 · Test</text>
+<text x="788.0" y="125" font-size="12" text-anchor="middle" fill="#1e40af">Testar</text>
+<text x="788.0" y="160" font-size="11.5" text-anchor="middle" fill="#4b5563">Android Lint · JUnit</text>
+<text x="788.0" y="175" font-size="11.5" text-anchor="middle" fill="#4b5563">revisão do Pull Request</text>
+<polygon points="894,82 1088,82 1106,111.0 1088,140 894,140 912,111.0" fill="#dcfce7" stroke="#166534" stroke-width="1.4"/>
+<text x="1004.0" y="107" font-size="15" font-weight="bold" text-anchor="middle" fill="#166534">5 · Release</text>
+<text x="1004.0" y="125" font-size="12" text-anchor="middle" fill="#166534">Versionar</text>
+<text x="1004.0" y="160" font-size="11.5" text-anchor="middle" fill="#4b5563">APK assinado (keystore)</text>
+<text x="1004.0" y="175" font-size="11.5" text-anchor="middle" fill="#4b5563">tag v1.x.y · GitHub Release</text>
+<polygon points="1110,82 1304,82 1322,111.0 1304,140 1110,140 1128,111.0" fill="#dcfce7" stroke="#166534" stroke-width="1.4"/>
+<text x="1220.0" y="107" font-size="15" font-weight="bold" text-anchor="middle" fill="#166534">6 · Deploy</text>
+<text x="1220.0" y="125" font-size="12" text-anchor="middle" fill="#166534">Implantar</text>
+<text x="1220.0" y="160" font-size="11.5" text-anchor="middle" fill="#4b5563">Firebase App Distribution</text>
+<text x="1220.0" y="175" font-size="11.5" text-anchor="middle" fill="#4b5563">Firebase CLI (regras)</text>
+<polygon points="1326,82 1520,82 1538,111.0 1520,140 1326,140 1344,111.0" fill="#dcfce7" stroke="#166534" stroke-width="1.4"/>
+<text x="1436.0" y="107" font-size="15" font-weight="bold" text-anchor="middle" fill="#166534">7 · Operate</text>
+<text x="1436.0" y="125" font-size="12" text-anchor="middle" fill="#166534">Operar</text>
+<text x="1436.0" y="160" font-size="11.5" text-anchor="middle" fill="#4b5563">Auth · Firestore · FCM</text>
+<text x="1436.0" y="175" font-size="11.5" text-anchor="middle" fill="#4b5563">plano Spark (serverless)</text>
+<polygon points="1542,82 1736,82 1754,111.0 1736,140 1542,140 1560,111.0" fill="#dcfce7" stroke="#166534" stroke-width="1.4"/>
+<text x="1652.0" y="107" font-size="15" font-weight="bold" text-anchor="middle" fill="#166534">8 · Monitor</text>
+<text x="1652.0" y="125" font-size="12" text-anchor="middle" fill="#166534">Monitorar</text>
+<text x="1652.0" y="160" font-size="11.5" text-anchor="middle" fill="#4b5563">Crashlytics* · Analytics*</text>
+<text x="1652.0" y="175" font-size="11.5" text-anchor="middle" fill="#4b5563">Console do Firebase</text>
+<polyline points="1738,146 1738,198 50,198 50,146" fill="none" stroke="#1f2937" stroke-width="1.6" marker-end="url(#fill)"/>
+<text x="895.0" y="214" font-size="12" font-style="italic" text-anchor="middle" fill="#1f2937">ciclo contínuo: o que é monitorado e o retorno dos usuários viram novas issues no planejamento</text>
+<text x="462" y="76" font-size="12" font-weight="bold" text-anchor="middle" fill="#1e40af">DEV (desenvolvimento)</text>
+<text x="1326" y="76" font-size="12" font-weight="bold" text-anchor="middle" fill="#166534">OPS (operação)</text>
+<text x="30" y="250" font-size="16" font-weight="bold" fill="#1f2937">Pipeline CI/CD e fluxo entre as ferramentas</text>
+<rect x="30" y="265" width="310" height="730" rx="12" fill="#e5e7eb" fill-opacity="0.35" stroke="#1f2937" stroke-width="1.2" stroke-dasharray="6,5"/>
+<text x="44" y="287" font-size="13" font-weight="bold" fill="#1f2937">Desenvolvimento (máquina local)</text>
+<rect x="375" y="265" width="725" height="730" rx="12" fill="#ede9fe" fill-opacity="0.35" stroke="#1f2937" stroke-width="1.2" stroke-dasharray="6,5"/>
+<text x="389" y="287" font-size="13" font-weight="bold" fill="#1f2937">GitHub (código, CI/CD e segredos)</text>
+<rect x="1115" y="265" width="360" height="730" rx="12" fill="#fde68a" fill-opacity="0.35" stroke="#1f2937" stroke-width="1.2" stroke-dasharray="6,5"/>
+<text x="1129" y="287" font-size="13" font-weight="bold" fill="#1f2937">Firebase / Google Cloud (produção)</text>
+<rect x="1505" y="265" width="255" height="730" rx="12" fill="#bbf7d0" fill-opacity="0.35" stroke="#1f2937" stroke-width="1.2" stroke-dasharray="6,5"/>
+<text x="1519" y="287" font-size="13" font-weight="bold" fill="#1f2937">Usuários</text>
+<rect x="50" y="310" width="270" height="175" rx="8" fill="#fff" stroke="#1f2937" stroke-width="1.4"/>
+<text x="62" y="332" font-size="11" fill="#4b5563">«ator»</text>
+<text x="62" y="349" font-size="14" font-weight="bold" fill="#1f2937">Equipe de desenvolvimento</text>
+<text x="62" y="373" font-size="12" fill="#4b5563">Android Studio + Kotlin</text>
+<text x="62" y="389" font-size="12" fill="#4b5563">branch feature/&lt;tarefa&gt;</text>
+<text x="62" y="405" font-size="12" fill="#4b5563">testes no emulador</text>
+<text x="62" y="421" font-size="12" fill="#4b5563">commit + git push</text>
+<rect x="50" y="790" width="270" height="150" rx="8" fill="#f9fafb" stroke="#1f2937" stroke-width="1.4"/>
+<text x="62" y="812" font-size="11" fill="#4b5563">«trabalho»</text>
+<text x="62" y="829" font-size="14" font-weight="bold" fill="#1f2937">Tarefa em andamento</text>
+<text x="62" y="853" font-size="12" fill="#4b5563">issue atribuída ao dev</text>
+<text x="62" y="869" font-size="12" fill="#4b5563">vira uma branch feature/*</text>
+<text x="62" y="885" font-size="12" fill="#4b5563">no repositório local</text>
+<rect x="395" y="310" width="320" height="250" rx="8" fill="#fff" stroke="#1f2937" stroke-width="1.4"/>
+<text x="407" y="332" font-size="11" fill="#4b5563">«repository» GitHub</text>
+<text x="407" y="349" font-size="14" font-weight="bold" fill="#1f2937">Repositório ConexaoTradicao-App</text>
+<text x="407" y="373" font-size="12" fill="#4b5563">branch master (protegida)</text>
+<text x="407" y="389" font-size="12" fill="#4b5563">branches feature/*</text>
+<text x="407" y="405" font-size="12" fill="#4b5563">Pull Request + code review</text>
+<text x="407" y="421" font-size="12" fill="#4b5563">merge só com CI aprovado ✓</text>
+<text x="407" y="437" font-size="12" fill="#4b5563">tags de versão v1.x.y</text>
+<text x="407" y="453" font-size="12" fill="#4b5563">.github/workflows/*.yml</text>
+<rect x="395" y="790" width="320" height="150" rx="8" fill="#fff" stroke="#1f2937" stroke-width="1.4"/>
+<text x="407" y="812" font-size="11" fill="#4b5563">«planejamento»</text>
+<text x="407" y="829" font-size="14" font-weight="bold" fill="#1f2937">GitHub Issues + Projects</text>
+<text x="407" y="853" font-size="12" fill="#4b5563">backlog → em andamento → feito</text>
+<text x="407" y="869" font-size="12" fill="#4b5563">bugs, melhorias e requisitos (RF)</text>
+<text x="407" y="885" font-size="12" fill="#4b5563">feedback dos testadores</text>
+<rect x="760" y="310" width="320" height="250" rx="8" fill="#fff" stroke="#1f2937" stroke-width="1.4"/>
+<text x="772" y="332" font-size="11" fill="#4b5563">«pipeline» integração contínua</text>
+<text x="772" y="349" font-size="14" font-weight="bold" fill="#1f2937">GitHub Actions — CI  ✓ implantado</text>
+<text x="772" y="373" font-size="12" fill="#4b5563">android-ci.yml · gatilho: push e PR</text>
+<text x="772" y="389" font-size="12" fill="#4b5563">① checkout do código</text>
+<text x="772" y="405" font-size="12" fill="#4b5563">② JDK 17 + cache do Gradle</text>
+<text x="772" y="421" font-size="12" fill="#4b5563">③ Android Lint (relatório)</text>
+<text x="772" y="437" font-size="12" fill="#4b5563">④ testes unitários JUnit</text>
+<text x="772" y="453" font-size="12" fill="#4b5563">⑤ build do APK (assembleDebug)</text>
+<text x="772" y="469" font-size="12" fill="#4b5563">⑥ status ✓/✗ + APK como artefato</text>
+<rect x="760" y="610" width="320" height="110" rx="8" fill="#fff7ed" stroke="#1f2937" stroke-width="1.4"/>
+<text x="772" y="632" font-size="11" fill="#4b5563">«cofre de segredos»</text>
+<text x="772" y="649" font-size="14" font-weight="bold" fill="#1f2937">GitHub Secrets</text>
+<text x="772" y="673" font-size="12" fill="#4b5563">KEYSTORE_BASE64 · KEYSTORE_PASSWORD</text>
+<text x="772" y="689" font-size="12" fill="#4b5563">GOOGLE_SERVICES_JSON</text>
+<text x="772" y="705" font-size="12" fill="#4b5563">FIREBASE_SERVICE_ACCOUNT</text>
+<rect x="760" y="770" width="320" height="185" rx="8" fill="#fff" stroke="#1f2937" stroke-width="1.4"/>
+<text x="772" y="792" font-size="11" fill="#4b5563">«pipeline» entrega contínua (próxima etapa)</text>
+<text x="772" y="809" font-size="14" font-weight="bold" fill="#1f2937">GitHub Actions — CD</text>
+<text x="772" y="833" font-size="12" fill="#4b5563">gatilho: merge na master ou tag v*</text>
+<text x="772" y="849" font-size="12" fill="#4b5563">① assina o APK com a keystore</text>
+<text x="772" y="865" font-size="12" fill="#4b5563">② envia ao App Distribution</text>
+<text x="772" y="881" font-size="12" fill="#4b5563">③ firebase deploy (firestore.rules)</text>
+<text x="772" y="897" font-size="12" fill="#4b5563">④ cria o GitHub Release com o APK</text>
+<rect x="1135" y="310" width="320" height="140" rx="8" fill="#fff" stroke="#1f2937" stroke-width="1.4"/>
+<text x="1147" y="332" font-size="11" fill="#4b5563">«service»</text>
+<text x="1147" y="349" font-size="14" font-weight="bold" fill="#1f2937">Firebase App Distribution</text>
+<text x="1147" y="373" font-size="12" fill="#4b5563">grupo de testadores:</text>
+<text x="1147" y="389" font-size="12" fill="#4b5563">“piloto-produtores”</text>
+<text x="1147" y="405" font-size="12" fill="#4b5563">notas de versão por release</text>
+<rect x="1135" y="510" width="320" height="150" rx="8" fill="#fff" stroke="#1f2937" stroke-width="1.4"/>
+<text x="1147" y="532" font-size="11" fill="#4b5563">«service» projeto conexao-e-tradicao</text>
+<text x="1147" y="549" font-size="14" font-weight="bold" fill="#1f2937">Backend Firebase</text>
+<text x="1147" y="573" font-size="12" fill="#4b5563">Authentication</text>
+<text x="1147" y="589" font-size="12" fill="#4b5563">Cloud Firestore + firestore.rules</text>
+<text x="1147" y="605" font-size="12" fill="#4b5563">Cloud Messaging (FCM)</text>
+<rect x="1135" y="750" width="320" height="190" rx="8" fill="#fff" stroke="#1f2937" stroke-width="1.4"/>
+<text x="1147" y="772" font-size="11" fill="#4b5563">«observabilidade»</text>
+<text x="1147" y="789" font-size="14" font-weight="bold" fill="#1f2937">Monitoramento</text>
+<text x="1147" y="813" font-size="12" fill="#4b5563">Crashlytics*: falhas e travamentos</text>
+<text x="1147" y="829" font-size="12" fill="#4b5563">Analytics*: uso das telas e eventos</text>
+<text x="1147" y="845" font-size="12" fill="#4b5563">Console: uso de leitura/escrita</text>
+<text x="1147" y="861" font-size="12" fill="#4b5563">e cotas do plano Spark</text>
+<text x="1147" y="877" font-size="12" fill="#4b5563">alertas por e-mail</text>
+<rect x="1525" y="310" width="215" height="200" rx="8" fill="#fff" stroke="#1f2937" stroke-width="1.4"/>
+<text x="1537" y="332" font-size="11" fill="#4b5563">«usuários piloto»</text>
+<text x="1537" y="349" font-size="14" font-weight="bold" fill="#1f2937">Produtores e compradores</text>
+<text x="1537" y="373" font-size="12" fill="#4b5563">smartphones Android</text>
+<text x="1537" y="389" font-size="12" fill="#4b5563">fase piloto: convite</text>
+<text x="1537" y="405" font-size="12" fill="#4b5563">por e-mail e instalação</text>
+<text x="1537" y="421" font-size="12" fill="#4b5563">pelo App Distribution</text>
+<text x="1537" y="437" font-size="12" fill="#4b5563"></text>
+<text x="1537" y="453" font-size="12" fill="#4b5563">feedback no próprio app</text>
+<polyline points="320,420 395,420" fill="none" stroke="#1f2937" stroke-width="1.7" marker-end="url(#fill)"/>
+<text x="326" y="392" font-size="11.5" text-anchor="start" fill="#1f2937" paint-order="stroke" stroke="#fff" stroke-width="4">git push /</text>
+<text x="326" y="406" font-size="11.5" text-anchor="start" fill="#1f2937" paint-order="stroke" stroke="#fff" stroke-width="4">Pull Request</text>
+<circle cx="357" cy="442" r="11" fill="#1f2937"/><text x="357" y="446.5" font-size="12" font-weight="bold" text-anchor="middle" fill="#fff">1</text>
+<polyline points="715,360 760,360" fill="none" stroke="#1f2937" stroke-width="1.7" marker-end="url(#fill)"/>
+<circle cx="737" cy="342" r="11" fill="#1f2937"/><text x="737" y="346.5" font-size="12" font-weight="bold" text-anchor="middle" fill="#fff">2</text>
+<text x="737" y="385" font-size="11" text-anchor="middle" fill="#1f2937">dispara</text>
+<polyline points="760,520 715,520" fill="none" stroke="#1f2937" stroke-width="1.7" marker-end="url(#fill)"/>
+<text x="737" y="540" font-size="11.5" text-anchor="middle" fill="#1f2937" paint-order="stroke" stroke="#fff" stroke-width="4">status</text>
+<text x="737" y="554" font-size="11.5" text-anchor="middle" fill="#1f2937" paint-order="stroke" stroke="#fff" stroke-width="4">✓/✗</text>
+<polyline points="715,470 740,470 740,830 760,830" fill="none" stroke="#1f2937" stroke-width="1.7" marker-end="url(#fill)"/>
+<text x="736" y="700" font-size="11.5" text-anchor="end" fill="#1f2937" paint-order="stroke" stroke="#fff" stroke-width="4">merge na</text>
+<text x="736" y="714" font-size="11.5" text-anchor="end" fill="#1f2937" paint-order="stroke" stroke="#fff" stroke-width="4">master / tag</text>
+<circle cx="740" cy="760" r="11" fill="#1f2937"/><text x="740" y="764.5" font-size="12" font-weight="bold" text-anchor="middle" fill="#fff">3</text>
+<polyline points="920,610 920,560" fill="none" stroke="#1f2937" stroke-width="1.7" stroke-dasharray="7,5" marker-end="url(#fill)"/>
+<text x="926" y="590" font-size="11.5" text-anchor="start" fill="#1f2937" paint-order="stroke" stroke="#fff" stroke-width="4">injeta segredos</text>
+<polyline points="920,720 920,770" fill="none" stroke="#1f2937" stroke-width="1.7" stroke-dasharray="7,5" marker-end="url(#fill)"/>
+<text x="926" y="750" font-size="11.5" text-anchor="start" fill="#1f2937" paint-order="stroke" stroke="#fff" stroke-width="4">injeta segredos</text>
+<polyline points="1080,820 1105,820 1105,380 1135,380" fill="none" stroke="#1f2937" stroke-width="1.7" marker-end="url(#fill)"/>
+<text x="1110" y="470" font-size="11.5" text-anchor="start" fill="#1f2937" paint-order="stroke" stroke="#fff" stroke-width="4">APK</text>
+<text x="1110" y="484" font-size="11.5" text-anchor="start" fill="#1f2937" paint-order="stroke" stroke="#fff" stroke-width="4">assinado</text>
+<circle cx="1105" cy="430" r="11" fill="#1f2937"/><text x="1105" y="434.5" font-size="12" font-weight="bold" text-anchor="middle" fill="#fff">4</text>
+<polyline points="1080,870 1118,870 1118,600 1135,600" fill="none" stroke="#1f2937" stroke-width="1.7" marker-end="url(#fill)"/>
+<text x="1122" y="690" font-size="11.5" text-anchor="start" fill="#1f2937" paint-order="stroke" stroke="#fff" stroke-width="4">regras do</text>
+<text x="1122" y="704" font-size="11.5" text-anchor="start" fill="#1f2937" paint-order="stroke" stroke="#fff" stroke-width="4">Firestore</text>
+<polyline points="1455,380 1525,380" fill="none" stroke="#1f2937" stroke-width="1.7" marker-end="url(#fill)"/>
+<text x="1462" y="352" font-size="11.5" text-anchor="start" fill="#1f2937" paint-order="stroke" stroke="#fff" stroke-width="4">convite +</text>
+<text x="1462" y="366" font-size="11.5" text-anchor="start" fill="#1f2937" paint-order="stroke" stroke="#fff" stroke-width="4">instalação</text>
+<circle cx="1490" cy="405" r="11" fill="#1f2937"/><text x="1490" y="409.5" font-size="12" font-weight="bold" text-anchor="middle" fill="#fff">5</text>
+<polyline points="1525,585 1455,585" fill="none" stroke="#1f2937" stroke-width="1.7" marker-end="url(#fill)" marker-start="url(#fillr)"/>
+<text x="1462" y="558" font-size="11.5" text-anchor="start" fill="#1f2937" paint-order="stroke" stroke="#fff" stroke-width="4">uso do app</text>
+<text x="1462" y="572" font-size="11.5" text-anchor="start" fill="#1f2937" paint-order="stroke" stroke="#fff" stroke-width="4">HTTPS · gRPC</text>
+<circle cx="1490" cy="612" r="11" fill="#1f2937"/><text x="1490" y="616.5" font-size="12" font-weight="bold" text-anchor="middle" fill="#fff">6</text>
+<polyline points="1632,510 1632,845 1455,845" fill="none" stroke="#1f2937" stroke-width="1.7" marker-end="url(#fill)"/>
+<text x="1640" y="690" font-size="11.5" text-anchor="start" fill="#1f2937" paint-order="stroke" stroke="#fff" stroke-width="4">falhas e</text>
+<text x="1640" y="704" font-size="11.5" text-anchor="start" fill="#1f2937" paint-order="stroke" stroke="#fff" stroke-width="4">métricas (SDK)</text>
+<circle cx="1632" cy="640" r="11" fill="#1f2937"/><text x="1632" y="644.5" font-size="12" font-weight="bold" text-anchor="middle" fill="#fff">7</text>
+<polyline points="1295,940 1295,978 555,978 555,940" fill="none" stroke="#1f2937" stroke-width="1.7" marker-end="url(#fill)"/>
+<text x="700" y="972" font-size="11.5" text-anchor="start" fill="#1f2937" paint-order="stroke" stroke="#fff" stroke-width="4">alertas, relatórios e feedback dos testadores viram novas issues</text>
+<circle cx="1200" cy="978" r="11" fill="#1f2937"/><text x="1200" y="982.5" font-size="12" font-weight="bold" text-anchor="middle" fill="#fff">8</text>
+<polyline points="395,865 320,865" fill="none" stroke="#1f2937" stroke-width="1.7" marker-end="url(#fill)"/>
+<circle cx="357" cy="845" r="11" fill="#1f2937"/><text x="357" y="849.5" font-size="12" font-weight="bold" text-anchor="middle" fill="#fff">9</text>
+<text x="357" y="890" font-size="11" text-anchor="middle" fill="#1f2937">próxima</text><text x="357" y="903" font-size="11" text-anchor="middle" fill="#1f2937">tarefa</text>
+<polyline points="185,790 185,485" fill="none" stroke="#1f2937" stroke-width="1.7" marker-end="url(#fill)"/>
+<text x="192" y="640" font-size="11.5" text-anchor="start" fill="#1f2937" paint-order="stroke" stroke="#fff" stroke-width="4">desenvolve</text>
+<rect x="30" y="1020" width="1730" height="112" fill="#fafafa" stroke="#cbd5e1"/>
+<text x="45" y="1044" font-size="14" font-weight="bold" fill="#1f2937">Legenda</text>
+<line x1="45" y1="1068" x2="105" y2="1068" stroke="#1f2937" stroke-width="1.7" marker-end="url(#fill)"/><text x="115" y="1072" font-size="12.5" fill="#1f2937">fluxo de trabalho / dados</text>
+<line x1="330" y1="1068" x2="390" y2="1068" stroke="#1f2937" stroke-width="1.7" stroke-dasharray="7,5" marker-end="url(#fill)"/><text x="400" y="1072" font-size="12.5" fill="#1f2937">segredos injetados no pipeline (nunca ficam no código)</text>
+<circle cx="760" cy="1067" r="11" fill="#1f2937"/><text x="760" y="1071.5" font-size="12" font-weight="bold" text-anchor="middle" fill="#fff">n</text>
+<text x="778" y="1072" font-size="12.5" fill="#1f2937">ordem do fluxo, do commit até o monitoramento</text>
+<rect x="1120" y="1058" width="22" height="18" fill="#dbeafe" stroke="#1e40af"/><text x="1150" y="1072" font-size="12.5" fill="#1f2937">etapas de desenvolvimento</text>
+<rect x="1350" y="1058" width="22" height="18" fill="#dcfce7" stroke="#166534"/><text x="1380" y="1072" font-size="12.5" fill="#1f2937">etapas de operação</text>
+<text x="45" y="1098" font-size="12.5" fill="#4b5563">Estratégia de branches: GitHub Flow — a branch master sempre está pronta para publicar; cada tarefa é feita numa branch feature/* e só entra na master por Pull Request com CI aprovado e revisão de outro integrante.</text>
+<text x="45" y="1117" font-size="12.5" fill="#4b5563">* Crashlytics e Analytics: SDKs do Firebase previstos para a fase piloto (gratuitos no plano Spark).</text>
+</svg>
