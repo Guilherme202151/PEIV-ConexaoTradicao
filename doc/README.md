@@ -114,8 +114,8 @@ A arquitetura DevOps define <strong>como o aplicativo evolui de forma contínua<
 ### Fluxo do pipeline
 
 1. O desenvolvedor faz `git push` da branch `feature/*` e abre um **Pull Request**.
-2. O PR **dispara o CI** no GitHub Actions: checkout, JDK 17 com cache do Gradle, Android Lint, testes unitários e build. O resultado (✓ ou ✗) aparece no próprio PR, e a `main` só aceita merge com o CI aprovado.
-3. O **merge na `main`** (ou uma tag de versão `v*`) **dispara o CD**.
+2. O PR **dispara o CI** no GitHub Actions: checkout, JDK 17 com cache do Gradle, Android Lint, testes unitários e build. O resultado (✓ ou ✗) aparece no próprio PR, e a `master` só aceita merge com o CI aprovado.
+3. O **merge na `master`** (ou uma tag de versão `v*`) **dispara o CD**.
 4. O CD assina o APK com a keystore guardada nos **GitHub Secrets**, envia o arquivo ao **Firebase App Distribution**, publica as regras do Firestore e cria um GitHub Release.
 5. Os produtores e compradores do grupo piloto recebem o **convite por e-mail** e instalam a nova versão.
 6. O app se comunica com o backend Firebase (HTTPS/gRPC), como descrito no diagrama de implantação.
@@ -126,10 +126,19 @@ A arquitetura DevOps define <strong>como o aplicativo evolui de forma contínua<
 ### Boas práticas adotadas
 
 <p align="justify">
-<strong>Segredos fora do código:</strong> a keystore de assinatura, o <code>google-services.json</code> e a credencial do Firebase ficam nos GitHub Secrets e só são injetados durante a execução do pipeline. <strong>Branch protegida:</strong> ninguém envia código direto para a <code>main</code>; tudo passa por Pull Request, CI e revisão. <strong>Rastreabilidade:</strong> cada versão distribuída tem uma tag, um GitHub Release e notas de versão, o que permite voltar a uma versão anterior se algo der errado. <strong>Feedback contínuo:</strong> o retorno dos produtores rurais na fase piloto alimenta o planejamento, mantendo o foco no problema social que o aplicativo resolve.
+<strong>Segredos fora do código:</strong> a keystore de assinatura, o <code>google-services.json</code> e a credencial do Firebase ficam nos GitHub Secrets e só são injetados durante a execução do pipeline. <strong>Branch protegida:</strong> ninguém envia código direto para a <code>master</code>; tudo passa por Pull Request, CI e revisão. <strong>Rastreabilidade:</strong> cada versão distribuída tem uma tag, um GitHub Release e notas de versão, o que permite voltar a uma versão anterior se algo der errado. <strong>Feedback contínuo:</strong> o retorno dos produtores rurais na fase piloto alimenta o planejamento, mantendo o foco no problema social que o aplicativo resolve.
 </p>
 
-> **Observação:** esta é a arquitetura DevOps adotada para a continuidade do projeto na Prática Extensionista IV. Os itens marcados com * no diagrama (Crashlytics e Analytics) são SDKs gratuitos do Firebase previstos para a fase piloto.
+### Situação da implantação
+
+| Parte do pipeline | Situação |
+|---|---|
+| **CI (integração contínua)** | **Implantado e funcionando.** Workflow [`.github/workflows/android-ci.yml`](https://github.com/fabioccf2/ConexaoTradicao-App/blob/master/.github/workflows/android-ci.yml) no repositório do app: a cada push ou Pull Request na `master`, o GitHub Actions faz checkout, configura o JDK 17 com cache do Gradle, gera o relatório do Android Lint, executa os testes unitários (JUnit) e compila o APK, que fica disponível como artefato da execução. A primeira execução (Android CI #1) terminou com sucesso ✓ em cerca de 4 minutos |
+| Firebase App Distribution | Ativo, com o grupo de testadores `piloto-produtores` |
+| CD (entrega contínua) | Próxima etapa: assinar o APK com a keystore guardada nos GitHub Secrets e enviar automaticamente ao App Distribution |
+| Crashlytics e Analytics (*) | SDKs gratuitos do Firebase previstos para a fase piloto |
+
+Execuções do pipeline: [github.com/fabioccf2/ConexaoTradicao-App/actions](https://github.com/fabioccf2/ConexaoTradicao-App/actions)
 
 ## 4. Infraestrutura de deploy/publicação
 
