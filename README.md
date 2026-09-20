@@ -3,7 +3,7 @@ Repositório da Prática Extensionista IV — UNOESC
 # Conexão & Tradição
 ### Aplicativo mobile para o resgate do carneamento comunitário no Sul do Brasil
 
-**Autores:** NOME COMPLETO 1, NOME COMPLETO 2, NOME COMPLETO 3
+**Autores:** Ana Paula Hilgert Boff, Fábio Czechwoski Costa, Guilherme, Jonas Cervelin Minati
 
 **Curso:** Sistemas de Informação — UNOESC
 **Componente curricular:** Prática Extensionista IV
@@ -70,10 +70,10 @@ PEIV-ConexaoTradicao/
 
 | Item | Arquivo |
 |---|---|
-| Diagrama UML de pacotes (arquitetura da aplicação) | [doc/diagramas/](doc/diagramas/) |
-| Diagrama de arquitetura de implantação | [doc/diagramas/](doc/diagramas/) |
-| Diagrama de arquitetura DevOps | [doc/diagramas/](doc/diagramas/) |
-| Infraestrutura de deploy/publicação e justificativa | [doc/README.md](doc/README.md) |
+| Diagrama UML de pacotes (arquitetura da aplicação) | [doc/diagramas/diagrama-pacotes.png](doc/diagramas/diagrama-pacotes.png) |
+| Diagrama de arquitetura de implantação | [doc/diagramas/diagrama-implantacao.png](doc/diagramas/diagrama-implantacao.png) |
+| Diagrama de arquitetura DevOps | [doc/diagramas/diagrama-devops.png](doc/diagramas/diagrama-devops.png) |
+| Infraestrutura de deploy/publicação e justificativa | [doc/README.md — seção 4](doc/README.md#4-infraestrutura-de-deploypublicação) |
 
 ## Código-fonte da aplicação
 
@@ -89,8 +89,9 @@ O código-fonte do aplicativo Android está em:
 
 ## Integrantes
 
-| Nome | Função no projeto |
-|---|---|
-| NOME COMPLETO 1 | |
-| NOME COMPLETO 2 | |
-| NOME COMPLETO 3 | |
+| Nome |
+|---|
+| Ana Paula Hilgert Boff |
+| Fábio Czechwoski Costa |
+| Guilherme |
+| Jonas Cervelin Minati |
