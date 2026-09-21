@@ -93,5 +93,5 @@ O código-fonte do aplicativo Android está em:
 |---|
 | Ana Paula Hilgert Boff |
 | Fábio Czechwoski Costa |
-| Guilherme Gonçalves |
+| Guilherme Gonsalves |
 | Jonas Cervelin Minati |
